@@ -1,6 +1,14 @@
 package com.bridgeit.fellowship.utility;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
+
+import com.bridgeit.fellowship.datastructure.LinkedList;
 
 
 
@@ -169,6 +177,61 @@ public class Utility
         }
      return 0;
    }
+	/*
+	 * purpose: static fuction to read from file and store in list
+	 *@param: passing file name as string 
+	 * @return: String array
+	 * */
 	
+	public static String[] readFile(String filename) throws IOException
+	{
+		File myfile = new File(filename);
+		
+	
+		String words[]=null;
+		//Creating FileReader Object
+		
+		FileReader fileReader = new FileReader(filename);
+		
+		//Creating BufferedReader Object
+		
+		BufferedReader bufferedreader = new BufferedReader(fileReader);
+		String line;
+		
+
+		while ((line = bufferedreader.readLine()) != null){
+			
+			//Appending line by line 
+			
+		     words=line.split(" ");
+		}
+
+		
+		//closing the FileReader object
+		
+		fileReader.close();
+		
+		//closing the BufferedReader object
+		
+		bufferedreader.close();
+		
+		//Returning the String 
+		
+		return words;
+	}
+	
+	
+	public static void writeToFile(String filename,LinkedList list) throws IOException{
+		FileWriter filewriter = new FileWriter(filename,true);
+		BufferedWriter bw = new BufferedWriter(filewriter);
+	   
+		for(int i =0 ; i<=list.size();i++) {
+			filewriter.write(list.getElement(i)+" ");
+			
+		}
+		System.out.println("File Writted Successfully");
+		bw.close();
+		filewriter.close();
+	}	
 	
 }

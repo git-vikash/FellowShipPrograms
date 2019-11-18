@@ -14,9 +14,9 @@ public class PrimeNumber
 		public static void main(String[] args)
 		{
 			
-			System.out.println("Enter the satrting number ");
+			System.out.println("Enter the first number ");
 			int x = Utility.inputInt();
-			System.out.println("Enter the endinging number ");
+			System.out.println("Enter the last number ");
 			int y = Utility.inputInt();
 
 			//Checking number is prime or not
