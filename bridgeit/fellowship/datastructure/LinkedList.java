@@ -1,6 +1,6 @@
 package com.bridgeit.fellowship.datastructure;
 
-public class LinkedList<E> 
+public class LinkedList
 {  
 static Node head;
    static int size;
@@ -25,7 +25,7 @@ static Node head;
 	
   	}
    
-   public static<E> void insertAtFirst(E data)
+   public static<E> void insert(E data)
    {
 	   Node node = new Node(data);
 	   size++;

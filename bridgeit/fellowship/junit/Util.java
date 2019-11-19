@@ -6,12 +6,13 @@ public class Util {
 	 * @param : passing int value
 	 * 
 	 * */
-	public static void decToBin(int n)
+	public static  String decToBin(int n)
 	{
-		int n1=(int)Math.pow(2, 16);
-		System.out.println(n1);
-		int arr[]=new int[n1];
-		int i=0,r=0;
+		String s = new String();	 
+
+		int arr[]=new int[8];
+
+		int i=0,r=0,l=0;
 		
 		while(0<n)
 		{
@@ -21,9 +22,12 @@ public class Util {
 			i++;
 		}
 		
-		for(int j=i-1;j>=0;j--)
+		for(int j=7;j>=0;j--,l++)
+		{
 			System.out.print(arr[j]+" ");
-			
+		        s=s+arr[j];
+		}
+		return s;	
 	}
 	/*
 	 * purpose: static function to find the day of week
@@ -88,5 +92,90 @@ public class Util {
 		return t;
 		
 	}
+	  /*
+	 * purpose: static fuction to read from file and store in list
+	 *@param: passing file name as string 
+	 * @return: String array
+	 * */
+	
 
+	
+
+  public static void permutation(String str, int f, int l) 
+	{ 
+		if (f == l) 
+			System.out.println(str); 
+		else { 
+			for (int i = f; i <= l; i++) { 
+				str = swap(str, f, i);         // to swapping of two char of f and i index
+				permutation(str, f + 1, l);   //permutation is recursive function 
+				str = swap(str, f, i); 
+			} 
+		} 
+	} 
+  
+  
+  /*
+	 * purpose: To swap two string 
+	 *@param: passing three param one string and two int values 
+	 * @return: swapped string
+	 * */
+	
+	public static String swap(String a, int i, int j) 
+	{ 
+		char temp; 
+		char[] arr= a.toCharArray(); 
+		temp = arr[i]; 
+		arr[i] = arr[j]; 
+		arr[j] = temp; 
+		return String.valueOf(arr); 
+	}
+	/*
+	 * purpose: To swap Nibbles 
+	 *@param: passing decimal value 
+	 * @return: int type decimal value
+	 * */
+	
+	public static void toSwapNibbles(String s) 
+	{
+		String s1="";
+			s1=s1+s.substring(3,7);
+            s1=s1+s.substring(0,3);	
+		System.out.println(s1);
+		
+	}
+	/*
+	 * purpose: convert binary to decimal
+	 *@param: passing string type
+	 * @return: int val
+	 * */
+	
+	
+	public static int toDecimal(String  s)
+	{
+	     
+		int len=s.length();
+		int i=0;
+		int res=0;
+		int pow=1;
+		
+		while(i<len)
+		{
+			
+			if(i==0)
+			{
+				pow=1;
+			}else // calculate power 
+			{
+				pow=pow*2;
+			}
+			//if 1 is found then add power into the result
+			if((s.charAt(i))=='1')
+			{
+				res=res+pow;
+			}
+			i++;
+		}
+		return res;
+	}
 }

@@ -19,7 +19,7 @@ public static void main(String[] args) throws Exception
         int len=words.length;
         for(int i=0;i<len;i++)
         {
-        	list.insertAtFirst(words[i]);
+        	list.insert(words[i]);
         }
         list.show();
         System.out.println("Enter the search String");

@@ -24,33 +24,18 @@ public class InsertionSort
 		}
 		//print array
 		System.out.println("Unsorted Array");
-		for (String b : s) 
+		
+		for (int i=0;i<n;i++) 
 		{
-			System.out.print(b+" ");
+			System.out.print(s[i]+" ");
 		}
          //insertion logic
-		for (int i = 0; i < n; i++) 
-		{
-			 for(int j=i+1;j<n;j++)
-			 {
-				 //comparing string
-				 if(s[i].compareToIgnoreCase(s[j])>0) 
-					{
-					 System.out.println(s[i].compareToIgnoreCase(s[j]));
-				       String t=s[i];
-				       s[i]=s[j];
-				       s[j]=t;
-				       
-					}
-				
-			 }
-			 
-		}	
+		String str[]=Utility.insertionSort(s);	
 
 		//print sorted array
 		System.out.println();
 		System.out.println("Sorted array is");		
-		for(String t:s)
+		for(String t:str)
 		{
 			System.out.print(t+" ");
 		}

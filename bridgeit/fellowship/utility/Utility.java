@@ -177,6 +177,10 @@ public class Utility
         }
      return 0;
    }
+
+
+	
+	
 	/*
 	 * purpose: static fuction to read from file and store in list
 	 *@param: passing file name as string 
@@ -220,6 +224,13 @@ public class Utility
 		return words;
 	}
 	
+	/*
+	 * purpose: static fuction write data into the file 
+	 *@param: passing file name as string and list of data
+	 * @return: void
+	 * */
+	
+	
 	
 	public static void writeToFile(String filename,LinkedList list) throws IOException{
 		FileWriter filewriter = new FileWriter(filename,true);
@@ -232,6 +243,107 @@ public class Utility
 		System.out.println("File Writted Successfully");
 		bw.close();
 		filewriter.close();
-	}	
+	}
 	
-}
+	public static String[] insertionSort(String s[])
+	{    int n= s.length;
+		for (int i = 0; i < n; i++) 
+		{
+			 for(int j=i+1;j<n;j++)
+			 {
+				 //comparing string
+				 if(s[i].compareToIgnoreCase(s[j])>0) 
+					{
+					 System.out.println(s[i].compareToIgnoreCase(s[j]));
+				       String t=s[i];
+				       s[i]=s[j];
+				       s[j]=t;
+				       
+					}
+				
+			 }
+			 
+		}
+		return s;
+	}
+
+	/*
+	 * purpose: static function to sort strings by using merge sort  algorithm
+	 *@param: passing string array , first and last index of string length
+	 * @return: String array
+	 * */
+	
+
+		public static String[] mergeSort(String s[],int first,int last)
+		{   
+			if(first<last)
+			{
+			int mid=(first+last-1)	/2;
+			s=mergeSort(s,first,mid-1);
+			s=mergeSort(s,mid+1,last);
+		     s=merge(s,first,mid,last);
+			}
+		    return s;
+		    
+		}
+		
+		  public static String[]  merge(String arr[], int first, int mid, int last) 
+	    { 
+	              int n1 = (mid - first) + 1; 
+	        int n2 = last - mid; 
+	  
+	        
+	        String left[] = new String [n1]; 
+	        String right[] = new String [n2]; 
+	        
+	      
+	        for (int i=0; i<n1; ++i) 
+	            left[i] = arr[first + i]; 
+	        for (int j=0; j<n2; ++j) 
+	            right[j] = arr[(mid + 1)+ j]; 
+	  
+	  
+	        int i = 0, j = 0; 
+	  
+	              int k = first; 
+	             
+	          	
+    
+	        while (i < n1 && j < n2) 
+	        { 
+	        	//compare left array string of index i with  right array index  j
+	            if (left[i].compareToIgnoreCase(right[j])<=0 ) 
+	            { 
+	                arr[k] = left[i]; 
+	                i++; 
+	            } 
+	            else
+	            { 
+	                arr[k] = right[j]; 
+	                j++; 
+	            } 
+	            k++; 
+	        } 
+	  
+	      //fetch remaining data of array
+	        while (i < n1) 
+	        { 
+	            arr[k] = left[i]; 
+	            i++; 
+	            k++; 
+	        } 
+	  
+	      
+	        while (j < n2) 
+	        { 
+	            arr[k] = right[j]; 
+	            j++; 
+	            k++; 
+	        }
+	        return arr;
+	    } 
+		
+		
+	}
+	
+
