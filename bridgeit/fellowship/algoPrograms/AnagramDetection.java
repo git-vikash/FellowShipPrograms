@@ -20,7 +20,7 @@ public class AnagramDetection
 		String str1 = Utility.inputString();
 		System.out.println("Enter the secound string");
 		String str2 = Utility.inputString();
-		boolean b = isAnagram(str1, str2);
+		boolean b = Utility.isAnagram(str1, str2);
 		if (b) 
 		{
 			System.out.println("String is Anagram");
@@ -34,28 +34,7 @@ public class AnagramDetection
 		Utility.closeScanner();
 	}
 
-	/**
-	 * Function to check whether strings are anagram
-	 * 
-	 * @param s1 : First String
-	 * @param s2 : Second String
-	 * @return true if strings are anagram else false
-	 **/
-
-	public static boolean isAnagram(String str1, String str2) 
-	{
-            boolean status;
-		if (str1.length() != str2.length())
-		{
-			return false;
-		}
-		char[] s1 = str1.toLowerCase().toCharArray();
-		char[] s2 = str2.toLowerCase().toCharArray();
-		Arrays.sort(s1);
-		Arrays.sort(s2);
-		status=Arrays.equals(s1,s2);
-		return status;
-		
-	}
+	
+	
 
 }

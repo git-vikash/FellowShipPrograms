@@ -11,7 +11,6 @@ import com.bridgeit.fellowship.utility.Utility;
 * */
 public class StopWatch
 {
-
 	public static void main(String[] args) 
 	{
 		long time1 = 0, time2 = 0; 

@@ -1,11 +1,13 @@
 package com.bridgeit.fellowship.datastructure;
 
 import com.bridgeit.fellowship.utility.StackUtility;
+import com.bridgeit.fellowship.utility.Utility;
 
 public class StackMain {
 	public static void main(String[] args) 
-	{
-		String str = "((5+6)∗(7+8))/(4+3)(5+6)∗((7+8/(4+3)))";
+	{ 
+		 System.out.println("Enter string");
+		String str=Utility.inputString();
 		char a[] = str.toCharArray();
 		System.out.println(str);
 		for (int i = 0; i < a.length; i++) 

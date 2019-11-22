@@ -2,17 +2,19 @@ package com.bridgeit.fellowship.datastructure;
 
 public class LinkedList
 {  
+@SuppressWarnings("rawtypes")
 static Node head;
-   static int size;
+    int size;
      
     public LinkedList()
     {   size=0;
     	head=null;
     }
-  static class  Node<E>
+  class  Node<E>
   	{
 	   E data;
-	   Node next;
+	   @SuppressWarnings("rawtypes")
+	Node next;
 	   
 	  public Node(E data)
 	  {
@@ -25,9 +27,10 @@ static Node head;
 	
   	}
    
-   public static<E> void insert(E data)
+   @SuppressWarnings("unchecked")
+public <E> void insert(E data)
    {
-	   Node node = new Node(data);
+	   Node<E> node = new Node<E>(data);
 	   size++;
 	if(head == null)
 	{
@@ -47,9 +50,12 @@ static Node head;
    }
   
    
-   public static void delete(String str)
+   @SuppressWarnings("unchecked")
+public  void delete(String str)
    {
-	   Node ptr = head;
+	   @SuppressWarnings("rawtypes")
+	Node ptr = head;
+		@SuppressWarnings("rawtypes")
 		Node prev = head;
 		if(ptr.data.equals(str)) 
 		{
@@ -81,7 +87,8 @@ static Node head;
 			}
 		}
    }
-   public static<E> boolean search(E data)
+   @SuppressWarnings("rawtypes")
+public <E> boolean search(E data)
    {
 	   Node ptr = head;
 
@@ -109,10 +116,11 @@ static Node head;
 
 	   
    }
-   public static<E> void show()
+   public <E> void show()
    {
 
-	   Node ptr = head;
+	   @SuppressWarnings("rawtypes")
+	Node ptr = head;
 
 		if(ptr.data==null) 
 		{
@@ -130,8 +138,9 @@ static Node head;
 
 
    }
-   public static<E> String getElement(int index)
+   public <E> String getElement(int index)
    {     
+		@SuppressWarnings("rawtypes")
 		Node n = head;
 		int count = 0;
 		while(n!=null)
@@ -141,7 +150,7 @@ static Node head;
 			count ++;
 			n = n.next;
 		}
-		return (String) "/0";
+		return (String) "";
 	   
    }
   

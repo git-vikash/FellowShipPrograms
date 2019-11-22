@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -21,7 +22,7 @@ public class Utility
   * @return integer of scanner type
   * */
 	public static int inputInt() 
-	{
+	{     
 		return sc.nextInt();
 	}
 	/*
@@ -31,7 +32,7 @@ public class Utility
 	  * */
 
 	public static String inputString()
-	{
+	{ 
 		return sc.next();
 	}
 	/*
@@ -171,7 +172,8 @@ public class Utility
         {    
       	  return i-1;
         }
-        else { 
+        else 
+        { 
       	  randomNum();
       	  
         }
@@ -233,7 +235,7 @@ public class Utility
 	
 	
 	public static void writeToFile(String filename,LinkedList list) throws IOException{
-		FileWriter filewriter = new FileWriter(filename,true);
+		FileWriter filewriter = new FileWriter(filename);
 		BufferedWriter bw = new BufferedWriter(filewriter);
 	   
 		for(int i =0 ; i<=list.size();i++) {
@@ -286,6 +288,7 @@ public class Utility
 		    return s;
 		    
 		}
+		
 		
 		  public static String[]  merge(String arr[], int first, int mid, int last) 
 	    { 
@@ -343,7 +346,139 @@ public class Utility
 	        return arr;
 	    } 
 		
-		
-	}
-	
+		  
+		  public static <T extends Comparable<T>> T[] bubbleSortGeneric(T[] arr)
+			 {
+				 int i,j;
+				T temp;	
+					for(i=0;i<arr.length-1;i++)
+					{
+						for(j=i+1;j<arr.length;j++)
+						{
+							if(arr[i].compareTo(arr[j])>=0)
+							{
+								temp=arr[i];
+								arr[i]=arr[j];
+								arr[j]=temp;
+							}
+						}
+					}
+				 return arr;
+			 }
 
+		  public static <T extends Comparable<T>> int binarySearchGeneric(T arr[], int low, int high, T key) 
+			 { 
+			     if (high >= low) { 
+			         
+			     	int mid = low + (high - low) / 2; 
+			        
+			     	if (arr[mid].compareTo(key)==0) 
+			             return mid; 
+			         
+			     	if (arr[mid].compareTo(key)>0) 
+			             return binarySearchGeneric(arr, low, mid - 1, key); 
+			         
+			     	return binarySearchGeneric(arr, mid + 1, high, key); 
+			     } 
+
+			     return -1; 
+			 }
+		  
+		  	/*
+		  	 * @purpose:
+		  	 * @param:
+		  	 * @return: 
+		  	 * **/
+		  
+		  
+		  public static int[][] storePrimeNumberInTo2DArray(int primeNumbers[],int row,int col)
+			{
+				int array[][] = new int[row][col];
+				
+			
+                 int k=0;
+				for(int i=0;i<row;i++)
+				{
+					for(int j=0;j<col;j++)
+					{
+						array[i][j]=primeNumbers[k++];
+					}
+				}
+				
+				return array;
+			}
+		  
+		   public static int[] primeSeries(int num)
+		   {
+			   int i =0;
+		       int j =0;
+		       int k=0;
+		      
+		       int a[]=new int[num];
+		       for (i = 1; i <=num ; i++)         
+		       { 		  	  
+		    	   int counter=0; 	  
+		    	   for(j =i; j>=1; j--)
+		    	   {
+		    		   if(i%j==0)
+		    		   {
+		    			   counter = counter + 1;
+		    		   }
+		    	   }
+		    	   if (counter ==2)
+		    	   {
+		    		  
+		    		 a[k]=i;
+		    		 
+		    		   k++;
+		    	   }	
+		      }
+		       return a;
+		   }
+	
+		   public static boolean isPrime(int num)
+		   {
+			   if (num <= 1) {  
+		           return false;  
+		       }  
+		       for (int i = 2; i < num; i++) 
+		       {  
+		           if (num % i == 0)
+		           {  
+		               return false;  
+		           }  
+		       }  
+		       return true;  
+			   
+		   }
+		   /**
+			 * FUNCTION TO CHECK WHETHER STRINGS ARE ANAGRAM
+			 * 
+			 * @PARAM S1 : FIRST STRING
+			 * @PARAM S2 : SECOND STRING
+			 * @RETURN TRUE IF STRINGS ARE ANAGRAM ELSE FALSE
+			 **/
+
+		
+		   
+		   public static boolean isAnagram(String str1, String str2) 
+			{
+		            boolean status;
+				if (str1.length() != str2.length())
+				{
+					return false;
+				}
+				char[] s1 = str1.toLowerCase().toCharArray();
+				char[] s2 = str2.toLowerCase().toCharArray();
+				Arrays.sort(s1);
+				Arrays.sort(s2);
+				status=Arrays.equals(s1,s2);
+				return status;
+				
+			}
+			
+
+	
+}
+			  
+			

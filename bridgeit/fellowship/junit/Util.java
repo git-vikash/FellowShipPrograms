@@ -93,7 +93,7 @@ public class Util {
 		
 	}
 	  /*
-	 * purpose: static fuction to read from file and store in list
+	 * purpose: static function to read from file and store in list
 	 *@param: passing file name as string 
 	 * @return: String array
 	 * */
@@ -105,8 +105,10 @@ public class Util {
 	{ 
 		if (f == l) 
 			System.out.println(str); 
-		else { 
-			for (int i = f; i <= l; i++) { 
+		else 
+		{ 
+			for (int i = f; i <= l; i++)
+			{ 
 				str = swap(str, f, i);         // to swapping of two char of f and i index
 				permutation(str, f + 1, l);   //permutation is recursive function 
 				str = swap(str, f, i); 
@@ -139,8 +141,8 @@ public class Util {
 	public static void toSwapNibbles(String s) 
 	{
 		String s1="";
-			s1=s1+s.substring(3,7);
-            s1=s1+s.substring(0,3);	
+			s1=s1+s.substring(4,8);
+            s1=s1+s.substring(0,4);	
 		System.out.println(s1);
 		
 	}

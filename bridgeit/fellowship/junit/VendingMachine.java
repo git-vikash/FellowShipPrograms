@@ -15,7 +15,8 @@ public class VendingMachine {
 		
 		int arr[]= {2000,1000,500,200,100,50,5,2,1};
 		int i=0,temp=0,sum=0;
-		int value=2584;
+		System.out.println("Enter amount");
+		int value=Utility.inputInt();
 		
 		while(0<value)
 		{

@@ -1,7 +1,9 @@
 package com.bridgeit.fellowship.utility;
 
-public class StackUtility {
+public class StackUtility<E>
+{
 	
+	@SuppressWarnings("rawtypes")
 	static Node top;
 
 	@SuppressWarnings("rawtypes")

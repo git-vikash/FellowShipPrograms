@@ -13,36 +13,12 @@ public class BinarySearch {
 	public static void main(String[] args) throws IOException
 	{  
 		//open file
-		
-		File f=new File("/home/bridgeit/Desktop/AlgorithPrograms/hello.txt");
-				
-		// create file reader object to read file
-		
-		FileReader fr =new FileReader(f);
-		
-		// create buffered reader object to read from buffer
-		
-		BufferedReader br =new BufferedReader(fr);
-	   
-		//create and initialize variables
-		
-		String words[]=null;
-		
-		String s;	
+		String words[]= Utility.readFile("Hello.txt");					
 		int mid,first,last;
+        int n=words.length;		
 		
-		//fetch line of data from file and store in  words array
-		while((s=br.readLine())!=null)
-		{ 
-			words=s.split(" ");
-			
-		}
-		int n= words.length;
-		
-		// print words array
-		
-		System.out.println(n);
 		for(int i=0;i<words.length;i++)
+			
 		System.out.println(words[i]);
 		
 		// sort Array
@@ -50,7 +26,7 @@ public class BinarySearch {
 		Arrays.sort(words);
 		
 		//take search string  from user
-		
+		System.out.println("Enter search string");
 		String search=Utility.inputString();
 		
 		//initialize variable
@@ -89,7 +65,7 @@ public class BinarySearch {
 		{		
 			System.out.println("Search string does not found");
 		}
-		br.close();
+		
 		 
 	}
 	

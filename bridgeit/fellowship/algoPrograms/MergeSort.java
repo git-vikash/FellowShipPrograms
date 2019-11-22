@@ -1,7 +1,13 @@
 package com.bridgeit.fellowship.algoPrograms;
 
 import com.bridgeit.fellowship.utility.Utility;
-
+/*
+* purpose:   To sort strings by using merge sort algorithm
+* 
+* @author Milind Patil
+* @version 1.0
+* @since 15-11-2019
+* */
 public class MergeSort {
 	
 	
@@ -17,6 +23,7 @@ public class MergeSort {
 		{
 			str[i]=Utility.inputString();
 		}
+		// call to mergeSort();
 		 s=Utility.mergeSort(str,0,str.length-1);	
 		System.out.println("Unsorted Array");
 		for (String b : s) 

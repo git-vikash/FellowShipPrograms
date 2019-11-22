@@ -7,7 +7,7 @@ class OderedListMain
 	public static void main(String args[])throws Exception 
  	{  LinkedList list=new LinkedList();
 		String str[] = Utility.readFile("Hello.txt");
-		   
+		 
 		int n=str.length;
 		System.out.println("Unsorted data=====>>");
 		for(String s:str)
@@ -20,8 +20,20 @@ class OderedListMain
 		{
 			list.insert(s[i]);
 		}
+		System.out.println();
 		System.out.println("sorted data=====>>");
 		list.show();
+		System.out.println("Enter the search String");
+        String search=Utility.inputString();
+          
+        boolean found=list.search(search);
+        if(found)
+        {
+        	list.delete(search);
+        System.out.println("found  ");
+        }else
+        	System.out.println("Not found");
+
 	    Utility.writeToFile("Hello.txt", list);
 	}
 }
