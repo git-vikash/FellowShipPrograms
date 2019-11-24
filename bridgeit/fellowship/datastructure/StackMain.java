@@ -38,6 +38,10 @@ public class StackMain {
 		while (i < len)
 		{
 			char ch = StackUtility.pop();
+			if(ch==')')
+			{
+				return false;
+			}
 			if (ch == '(') 
 			{
 				count1++;

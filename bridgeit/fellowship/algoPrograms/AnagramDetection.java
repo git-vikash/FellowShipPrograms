@@ -20,7 +20,7 @@ public class AnagramDetection
 		String str1 = Utility.inputString();
 		System.out.println("Enter the secound string");
 		String str2 = Utility.inputString();
-		boolean b = Utility.isAnagram(str1, str2);
+		boolean b = Utility.isStringAnagram(str1, str2);
 		if (b) 
 		{
 			System.out.println("String is Anagram");

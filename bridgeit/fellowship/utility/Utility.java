@@ -10,6 +10,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 import com.bridgeit.fellowship.datastructure.LinkedList;
+import com.bridgeit.fellowship.junit.Util;
 
 
 
@@ -256,7 +257,7 @@ public class Utility
 				 //comparing string
 				 if(s[i].compareToIgnoreCase(s[j])>0) 
 					{
-					 System.out.println(s[i].compareToIgnoreCase(s[j]));
+					s[i].compareToIgnoreCase(s[j]);
 				       String t=s[i];
 				       s[i]=s[j];
 				       s[j]=t;
@@ -461,7 +462,7 @@ public class Utility
 
 		
 		   
-		   public static boolean isAnagram(String str1, String str2) 
+		   public static boolean isStringAnagram(String str1, String str2) 
 			{
 		            boolean status;
 				if (str1.length() != str2.length())
@@ -476,9 +477,101 @@ public class Utility
 				return status;
 				
 			}
-			
+		   
+		   public static void isAnagram(int a[],int count)
+		   {
+		 	 String s1,s2;
+		 	 boolean status;
+		 	  for(int i=0;i<count;i++)
+		 	  {	    
+		 			  s1= String.valueOf(a[i]);
+		 			  for(int j=0;j<count;j++)
+		 			  {   if(i!=j)
+		 			  	{
+		 				  s2=String.valueOf(a[j]);
+		 				  status=Utility.isStringAnagram(s1, s2);
+//		 				  System.out.println(status);
+		 				  if(status==true)
+		 					  System.out.println(s1+" "+s2);
+		 			  	}
+		 			
+		 			  }
+		 			  
+		         }
+		 	  
+		   }
 
-	
+		public static<E> E[] printArray(E [] arr) 
+		{
+		for(int i=0;i<arr.length;i++)
+		{
+			System.out.print(" "+arr[i]);
+		}
+			return arr;
+		}
+
+//		public static<E> E[] removeDoublicateInArray(E arr[])
+//		{  E temparr[];
+//		int i;
+//			for( i=1;i<arr.length;i++)
+//			{   
+//				if(arr[i]!=arr[i-1])
+//				{
+//					temparr=(E[]) arr[i-1];		
+//			
+//				}
+//			
+//			}
+//			temparr=(E[])arr[arr.length-1];
+//			return temparr;
+//			
+
+	public static String[][] createCalander(int month, int year) 
+	{
+
+		String calender[][] = new String[7][7];
+		int day = Util.dayOfWeek(1, month, year);
+		String dayofWeek[] = { "sun", "mon", "tue", "wed", "thurs", "fri", "sat" };
+		int daysofmonth[] = { 30, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+		int days = daysofmonth[month];
+		int k = 1;
+		int flag = 0;
+		for (int i = 0; i < 7; i++) 
+		{
+			for (int j = 0; j < 7; j++) 
+			{
+				if (k <= days) 
+				{
+					if (i == 0)
+					{
+						calender[i][j] = dayofWeek[j];
+					} else if (day == j) 
+					{
+						calender[i][j] = String.valueOf(k);
+						day++;
+						k++;
+						flag = 1;
+					} else
+					{
+						calender[i][j] = "";
+					}
+				}
+				else
+				{
+					calender[i][j]="";
+				}
+
+			}
+			if (flag == 1) 
+			{
+				day = 0;
+			}
+
+		}
+		return calender;
+	}
+			
 }
+
 			  
 			

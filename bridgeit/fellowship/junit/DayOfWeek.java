@@ -38,7 +38,7 @@ public class DayOfWeek {
 		case 6:
 			System.out.println("Saturday");
 			break;
-		case 7:
+		case 0:
 			System.out.println("Sunday");
 			break;
 		}

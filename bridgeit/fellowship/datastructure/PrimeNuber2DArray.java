@@ -10,13 +10,13 @@ public class PrimeNuber2DArray
 	 int col=30;
 		int ar[] = Utility.primeSeries(1000);
 		int primeArray[][] = Utility.storePrimeNumberInTo2DArray(ar, row, col);
-		int count = 99;
+		int count = 97;
 		for (int i = 0; i < row; i++) 
 		{
 			for (int j = 0; j < col; j++) 
 			{
 				if (primeArray[i][j] != 0)
-					System.out.print("" + primeArray[i][j] + " ");
+					System.out.print(" " + primeArray[i][j] + " ");
 				if (count < primeArray[i][j])
 				{
 					count = count + 100;

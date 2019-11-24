@@ -149,7 +149,7 @@ public class Queue
 					
 					while(ptr!=null)
 					{
-						System.out.print(ptr.data+"<-");
+						System.out.print(ptr.data+" ");
 						ptr= ptr.next;
 					}
 				}else {

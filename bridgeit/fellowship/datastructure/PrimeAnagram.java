@@ -8,18 +8,16 @@ public class PrimeAnagram
   {   
 	  
 	  System.out.println("Enter number");
-	   
 	  int num=Utility.inputInt();
 	  int arr[] =Utility.primeSeries(num);
-	  for(int i=0;i<arr.length;i++)
-	  {
-//		  boolean status= Utility.isPrime(arr[i]);	 
-//		  System.out.println();
-//		  if(status==true)
-//		  System.out.println(arr[i]+" "+status);
-		  System.out.println(arr[i]);
-	  }
+	  int count=0;
 	 
-	
- }
+	  int i=0;
+	  while(arr[i]>0)
+	  {
+		  count++;
+		  i++;
+	  }
+	 Utility.isAnagram(arr,count);	  	 	  	
+ } 
 }
