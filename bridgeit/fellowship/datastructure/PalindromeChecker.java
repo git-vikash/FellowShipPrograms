@@ -1,12 +1,20 @@
 package com.bridgeit.fellowship.datastructure;
 
 import com.bridgeit.fellowship.utility.Queue;
+/*
+*
+* purpose:  To chek. 
+* 
+* @author Milind Patil
+* @version 1.0
+* since: 21-11-2019
+* */
 
 public class PalindromeChecker
 {
   public static void main(String[] args)
   {
-	String str="";
+	String str="abc";
 	int len=str.length();
 	int midlen=(len/2);
 	int flag=0;

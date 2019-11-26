@@ -27,7 +27,7 @@ public class ArrayList
    {
 	   for(int i=0;i<11;i++)
 	   {
-		   System.out.println("  "+obj[1].toString());
+		   System.out.println("  "+obj[i].toString());
 	   }
    }
 }

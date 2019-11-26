@@ -1,6 +1,14 @@
 package com.bridgeit.fellowship.datastructure;
 import com.bridgeit.fellowship.utility.Queue;
 import com.bridgeit.fellowship.utility.Utility;
+/*
+*
+* purpose:  To print dates of week. 
+* 
+* @author Milind Patil
+* @version 1.0
+* since: 20-11-2019
+* */
 
 public class DatesOfWeek 
 {
@@ -17,7 +25,7 @@ public class DatesOfWeek
 	
 	
 	
-		String calender[][]= Utility.createCalander(month,year);
+		String calender[][]= Utility.createCalendar(month,year);
 			for(int i=0;i<7;i++)
 			{
 				for(int j=0;j<7;j++)

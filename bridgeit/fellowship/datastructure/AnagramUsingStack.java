@@ -2,6 +2,14 @@ package com.bridgeit.fellowship.datastructure;
 
 import com.bridgeit.fellowship.utility.StackUtility;
 import com.bridgeit.fellowship.utility.Utility;
+/*
+*
+* purpose:  To find nmber is anagram or not. 
+* 
+* @author Milind Patil
+* @version 1.0
+* since: 19-11-2019
+* */
 
 public class AnagramUsingStack
 {
@@ -26,10 +34,7 @@ public class AnagramUsingStack
 	 String s1,s2;
 	 int count1=0;
 	 boolean status;
-	 int popnum;
-	 int temp;
-	 int k=0;
-	 int l=-1;
+
 	  for(int i=0;i<count;i++)
 	  {	    
 			  s1= String.valueOf(a[i]);

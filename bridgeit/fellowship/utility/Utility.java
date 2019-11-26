@@ -34,7 +34,7 @@ public class Utility
 
 	public static String inputString()
 	{ 
-		return sc.next();
+		return sc.nextLine();
 	}
 	/*
 	  * static function to check for input character
@@ -198,7 +198,7 @@ public class Utility
 		String words[]=null;
 		//Creating FileReader Object
 		
-		FileReader fileReader = new FileReader(filename);
+		FileReader fileReader = new FileReader(myfile);
 		
 		//Creating BufferedReader Object
 		
@@ -347,6 +347,11 @@ public class Utility
 	        return arr;
 	    } 
 		
+		  /*
+			 * purpose: static function to sort element using bubble sort
+			 *@param: passing array 
+			 * @return: return sorted array
+			 * */
 		  
 		  public static <T extends Comparable<T>> T[] bubbleSortGeneric(T[] arr)
 			 {
@@ -366,7 +371,13 @@ public class Utility
 					}
 				 return arr;
 			 }
-
+		  
+		  /*
+			 * purpose: static function to search element using binarySearch technique
+			 *@param: passing array 
+			 * @return: return sorted array
+			 * */
+		  
 		  public static <T extends Comparable<T>> int binarySearchGeneric(T arr[], int low, int high, T key) 
 			 { 
 			     if (high >= low) { 
@@ -385,18 +396,15 @@ public class Utility
 			     return -1; 
 			 }
 		  
-		  	/*
-		  	 * @purpose:
-		  	 * @param:
-		  	 * @return: 
-		  	 * **/
-		  
+		  /*
+			 * purpose: static function to store array of prime numbers into 2D-Array
+			 *@param: passing array ,row and colomns of array
+			 * @return: return 2D array
+			 * */
 		  
 		  public static int[][] storePrimeNumberInTo2DArray(int primeNumbers[],int row,int col)
 			{
-				int array[][] = new int[row][col];
-				
-			
+				int array[][] = new int[row][col];			
                  int k=0;
 				for(int i=0;i<row;i++)
 				{
@@ -409,6 +417,11 @@ public class Utility
 				return array;
 			}
 		  
+		  /*
+			 * purpose: static function to generate prime number upto given number
+			 *@param: int value
+			 * @return: return integer array
+			 * */
 		   public static int[] primeSeries(int num)
 		   {
 			   int i =0;
@@ -436,7 +449,30 @@ public class Utility
 		      }
 		       return a;
 		   }
-	
+		   
+		   
+		   public static int binarySearchInt(int arr[], int low, int high, int key) 
+		    { 
+		        if (high >= low) { 
+		            
+		        	int mid = low + (high - low) / 2; 
+		           
+		        	if (arr[mid] == key) 
+		                return mid; 
+		            
+		        	if (arr[mid] > key) 
+		                return binarySearchInt(arr, low, mid - 1, key); 
+		            
+		        	return binarySearchInt(arr, mid + 1, high, key); 
+		        } 
+		  
+		        return -1; 
+		    }
+		   /*
+			 * purpose: static function to check number is prime or not
+			 *@param: int number
+			 * @return: return boolean value
+			 * */	   
 		   public static boolean isPrime(int num)
 		   {
 			   if (num <= 1) {  
@@ -452,14 +488,11 @@ public class Utility
 		       return true;  
 			   
 		   }
-		   /**
-			 * FUNCTION TO CHECK WHETHER STRINGS ARE ANAGRAM
-			 * 
-			 * @PARAM S1 : FIRST STRING
-			 * @PARAM S2 : SECOND STRING
-			 * @RETURN TRUE IF STRINGS ARE ANAGRAM ELSE FALSE
-			 **/
-
+		   /*
+			 * purpose: static function to strings are anagram or not
+			 *@param: two strings str1 and str2
+			 * @return: return boolean value
+			 * */
 		
 		   
 		   public static boolean isStringAnagram(String str1, String str2) 
@@ -478,6 +511,12 @@ public class Utility
 				
 			}
 		   
+		   /*
+			 * purpose: static function to print  anagram numbers from given array
+			 *@param: int one-D array and count of size of array
+			 * @return: void
+			 * */
+		   
 		   public static void isAnagram(int a[],int count)
 		   {
 		 	 String s1,s2;
@@ -485,7 +524,7 @@ public class Utility
 		 	  for(int i=0;i<count;i++)
 		 	  {	    
 		 			  s1= String.valueOf(a[i]);
-		 			  for(int j=0;j<count;j++)
+		 			  for(int j=i;j<count;j++)
 		 			  {   if(i!=j)
 		 			  	{
 		 				  s2=String.valueOf(a[j]);
@@ -500,14 +539,21 @@ public class Utility
 		         }
 		 	  
 		   }
+		   
+		   /*
+			 * purpose: static function to print value of 
+			 *@param: passing array 
+			 * @return: return sor
+			 * */
+		  
 
-		public static<E> E[] printArray(E [] arr) 
+		public static<E> void printArray(E [] arr) 
 		{
 		for(int i=0;i<arr.length;i++)
 		{
 			System.out.print(" "+arr[i]);
 		}
-			return arr;
+		
 		}
 
 //		public static<E> E[] removeDoublicateInArray(E arr[])
@@ -525,8 +571,14 @@ public class Utility
 //			temparr=(E[])arr[arr.length-1];
 //			return temparr;
 //			
+		
+		/*
+		 * purpose: static fuction to crate calendar 
+		 *@param: passing array  two int valves month and year
+		 * @return: return Two-D String array 
+		 * */
 
-	public static String[][] createCalander(int month, int year) 
+	public static String[][] createCalendar(int month, int year) 
 	{
 
 		String calender[][] = new String[7][7];
@@ -570,8 +622,25 @@ public class Utility
 		}
 		return calender;
 	}
+	
+	   
+	   /*
+		 * purpose: static function calculate factorial of given number 
+		 *@param: passing int type value
+		 * @return: return long type value
+		 * */
+
+	
+	public static long factorial(int n)
+	{  long sum=1;
+		for(int i=n;i>0;i--)
+		{
+			   sum=sum*i;
+		}
+		return sum;
+	}
 			
+
 }
 
 			  
-			

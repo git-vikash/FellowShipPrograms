@@ -1,7 +1,16 @@
 package com.bridgeit.fellowship.datastructure;
-import com.bridgeit.fellowship.utility.Utility;
 
-public class Calander 
+import com.bridgeit.fellowship.utility.Utility;
+/*
+*
+* purpose:  To store and  print calendar by 2D Array.
+* 
+* @author Milind Patil
+* @version 1.0
+* since: 20-11-2019
+* */
+
+public class Calendar 
 {
   public static void main(String[] args)
   {
@@ -9,7 +18,7 @@ public class Calander
 	int month=Utility.inputInt();
 	System.out.println("Enter year");
 	int year=Utility.inputInt();
-	String calender[][]= Utility.createCalander(month,year);	
+	String calender[][]= Utility.createCalendar(month,year);	// return two-D array
 	
 	for(int i=0;i<7;i++)
 	{
@@ -19,6 +28,8 @@ public class Calander
 		}
 		System.out.println();
 	}
+	
+
   }
 
 

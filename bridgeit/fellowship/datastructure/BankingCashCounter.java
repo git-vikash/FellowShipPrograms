@@ -1,6 +1,15 @@
 package com.bridgeit.fellowship.datastructure;
 
 import com.bridgeit.fellowship.utility.Utility;
+/*
+*
+* purpose: To maintain Banking ransaction deposit and withdraw money. 
+* 
+* @author Milind Patil
+* @version 1.0
+* since: 19-11-2019
+* */
+
 
 public class BankingCashCounter 
 {

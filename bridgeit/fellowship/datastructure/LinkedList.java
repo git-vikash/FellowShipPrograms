@@ -3,7 +3,7 @@ package com.bridgeit.fellowship.datastructure;
 public class LinkedList
 {  
 @SuppressWarnings("rawtypes")
-static Node head;
+Node head;
     int size;
      
     public LinkedList()
@@ -38,6 +38,7 @@ public <E> void insert(E data)
 	}
 	else
 	{  
+		@SuppressWarnings("rawtypes")
 		Node ptr = head;
 		while(ptr.next!=null)
 		{
@@ -51,7 +52,7 @@ public <E> void insert(E data)
   
    
    @SuppressWarnings("unchecked")
-public  void delete(String str)
+public<T>  void delete(T str)
    {
 	   @SuppressWarnings("rawtypes")
 	Node ptr = head;
@@ -88,19 +89,14 @@ public  void delete(String str)
 		}
    }
    @SuppressWarnings("rawtypes")
-public <E> boolean search(E data)
+public <E extends Comparable<E>> boolean search(E data)
    {
 	   Node ptr = head;
 
-		if(ptr.data.equals(data)) 
-		{
-		 return true;
 	
-	
-		}
-		while(ptr.next!=null)
+		while(ptr!=null)
 		{			
-			if(data.equals(ptr.data))
+			if(data.compareTo((E) ptr.data)==0)
 			{
 				 return  true;				
 			}
@@ -108,10 +104,7 @@ public <E> boolean search(E data)
 			ptr=ptr.next;
 			
 		}
-		if(data.equals(ptr.data))
-		{
-			 return  true;				
-		}
+	
 		return false ;
 
 	   
@@ -122,19 +115,19 @@ public <E> boolean search(E data)
 	   @SuppressWarnings("rawtypes")
 	Node ptr = head;
 
-		if(ptr.data==null) 
+		if(ptr==null) 
 		{
 		   
 	       System.out.println("Empty");
 	
 		}
-		while(ptr.next!=null)
+		while(ptr!=null)
 		{			
-			System.out.println(" "+ptr.data);
+			System.out.print(ptr.data+"->");
 		
 			ptr=ptr.next;
 		}	
-		System.out.println(" "+ptr.data);
+		//System.out.println(" "+ptr.data);
 
 
    }

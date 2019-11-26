@@ -2,7 +2,14 @@ package com.bridgeit.fellowship.datastructure;
 
 import com.bridgeit.fellowship.utility.StackUtility;
 import com.bridgeit.fellowship.utility.Utility;
-
+/*
+*
+* purpose:  To gerate prime number upto n given number and chek it is anagram or not (using Stack). 
+* 
+* @author Milind Patil
+* @version 1.0
+* since: 23-11-2019
+* */
 public class PrimeAnagramUsingStack
 {
   public static void main(String[] args)
@@ -31,15 +38,12 @@ public class PrimeAnagramUsingStack
 	 String s1,s2;
 	 int count1=0;
 	 boolean status;
-	 int popnum;
-	 int temp;
-	 int k=0;
-	 int l=-1;
+
 	  for(int i=0;i<count;i++)
 	  {	    
 			  s1= String.valueOf(a[i]);
-			  for(int j=0;j<count;j++)
-			  {   if(i!=j)
+			  for(int j=i;j<count;j++)
+			  {   if(i!=j &&j!=i)
 			  	{ 
 				 	//System.out.println(i+" "+j);
 					  s2=String.valueOf(a[j]);

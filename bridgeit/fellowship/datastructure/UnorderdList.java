@@ -7,15 +7,8 @@ public static void main(String[] args) throws Exception
 {
         LinkedList list=new LinkedList();		
 		
-		//Reading the file and storing it in an array
-		//String data = "rahul,rajat rakesh,shubham";
-        
 		String words[] = Utility.readFile("Hello.txt");
-       // System.out.println("Enter the word to search :");
-       // String str = Utility.inputString();
-        
-        //Calling unOrderedList of DSUtil class 
-		//System.out.println(Arrays.toString(words));
+      
         int len=words.length;
         for(int i=0;i<len;i++)
         {

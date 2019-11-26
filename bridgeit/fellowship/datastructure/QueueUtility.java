@@ -1,7 +1,14 @@
 package com.bridgeit.fellowship.datastructure;
 
 import com.bridgeit.fellowship.utility.Utility;
-
+/*
+*
+* purpose:  To maintain cash counter data. 
+* 
+* @author Milind Patil
+* @version 1.0
+* since: 26-11-2019
+* */
 public class QueueUtility {
    static Node head;
 	static int size;
@@ -30,7 +37,7 @@ public class QueueUtility {
 
 	
 	public static void addUser(int  acc_no,String u_name,float bal) {
-		@SuppressWarnings("unchecked")
+	
 		Node node = new Node(acc_no,u_name,bal);
 		size++;
 		if (head == null) {

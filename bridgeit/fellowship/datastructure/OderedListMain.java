@@ -1,7 +1,14 @@
 package com.bridgeit.fellowship.datastructure;
 
 import com.bridgeit.fellowship.utility.Utility;
-
+/*
+*
+* purpose:  To read data from file and sort data then store in file. 
+* 
+* @author Milind Patil
+* @version 1.0
+* since: 21-11-2019
+* */
 class OderedListMain 
 {
 	public static void main(String args[])throws Exception 

@@ -1,8 +1,15 @@
 package com.bridgeit.fellowship.datastructure;
 
 import com.bridgeit.fellowship.utility.Utility;
-
-public class PrimeNuber2DArray
+/*
+*
+* purpose:  To gerate prime number upto 1000 and store it in 2D-Array. 
+* 
+* @author Milind Patil
+* @version 1.0
+* since: 23-11-2019
+* */
+public class PrimeNumber2DArray
 {
   public static void main(String[] args) 
   {
@@ -10,7 +17,7 @@ public class PrimeNuber2DArray
 	 int col=30;
 		int ar[] = Utility.primeSeries(1000);
 		int primeArray[][] = Utility.storePrimeNumberInTo2DArray(ar, row, col);
-		int count = 97;
+		int count = 96;
 		for (int i = 0; i < row; i++) 
 		{
 			for (int j = 0; j < col; j++) 

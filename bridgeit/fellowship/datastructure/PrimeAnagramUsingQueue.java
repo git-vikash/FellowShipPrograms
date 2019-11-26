@@ -3,6 +3,14 @@ package com.bridgeit.fellowship.datastructure;
 import com.bridgeit.fellowship.utility.Queue;
 
 import com.bridgeit.fellowship.utility.Utility;
+/*
+*
+* purpose:  To gerate prime number upto n given number and chek it is anagram or not (using Queue). 
+* 
+* @author Milind Patil
+* @version 1.0
+* since: 22-11-2019
+* */
 
 public class PrimeAnagramUsingQueue
 {
@@ -32,7 +40,7 @@ public class PrimeAnagramUsingQueue
 	  for(int i=0;i<count;i++)
 	  {	    
 			  s1= String.valueOf(a[i]);
-			  for(int j=0;j<count;j++)
+			  for(int j=i;j<count;j++)
 			  {   if(i!=j)
 			  	{ 
 				 	//System.out.println(i+" "+j);
